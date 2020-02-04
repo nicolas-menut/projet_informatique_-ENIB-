@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block body%}
+<center><img src = "static/logo/{{val}}"></center>
+<header class="jumbotron my-4">
+<h1 class="display-3" id="demande"><center>{{title}}</center></h1>
+<p class="lead">{{texte}}</p>
+</header>
+<div class="container">
+  <h2>Evenement</h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Nom de l'evenement</div>
+      <div class="col col-2">Date de l'evenement</div>
+    </li>
+    {%for post in name%}
+    <li class="table-row">
+      <div class="col col-1" data-label="Nom de l'evenement"><a href={{ url_for('moremore', idevent=post.id)}}>{{post.nom_event}}</a></div>
+      <div class="col col-2" data-label="Date de l'evenement">{{post.dateevent}}</div>
+    </li>
+    {% endfor %} 
+  </ul>
+</div>
+{% endblock body %}

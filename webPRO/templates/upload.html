@@ -1,0 +1,19 @@
+{% extends "p_pr.html" %}
+{% block content %}
+<h1 class="display-3">Uploader une vidéo</h1>
+<p class="lead">Chère utilisateur, évitez d'envoyer des vidéos pas trash ou pornographique pour l'instant je n'ai pas mis de catégorie. Ne mettez que des vidéos aussi de préférence mp4 les autres versions je ne les aient pas encore testés.</p>
+</header>
+<center>
+    <body>
+        <form action = "" method = "POST"
+        enctype = "multipart/form-data">
+        <input type = "file" name = "file" />
+        <input type = "submit" name = "maintenant"/>
+        <strong>{{parle}}</strong>
+        <br><br>
+        <input class = "btn btn-secondary" type="submit" name ="retour" value="retourner a la page principale">
+        </form>
+    </body>
+</center>
+<br>
+{% endblock %}

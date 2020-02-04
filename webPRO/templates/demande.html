@@ -1,0 +1,60 @@
+{% extends "p_pr.html" %}
+{% block content %}
+      <h1 class="display-3">Bienvenue {{vul}}</h1>
+      <p class="lead">Bonjour utilisateur, ici, vous pouvez stocker et visualiser les videos. Il faut savoir que les vidéos accessibles sont des vidéos partagées par la communautée de ce site. Il faut savoir aussi que 
+        les dossiers que vous stockerez sont stockés dans votre répertoire personnel.
+      </p>
+      </header>
+      <body>
+
+    <center>
+      <h3>
+    </center>
+    <center>
+      <div class="container">
+        <ul class="responsive-table">
+          <li class="table-header">
+            <div class="col col-1">Nom de l'evenement</div>
+            <div class="col col-2">Date de l'evenement</div>
+          </li>
+          {%for post in posts%}
+          <li class="table-row">
+            <div class="col col-1" data-label="Nom de l'evenement">{{post.nom_event}}</a></div>
+            <div class="col col-2" data-label="Date de l'evenement">{{post.dateevent}}</div>
+          </li>
+          {% endfor %} 
+        </ul>
+      </div>
+      </tbody>
+    </table>
+    <br>
+    <form action="" method="post">
+      <input type="text" placeholder="addevent" name="addevent" value="{{
+                request.form.addevent }}">
+      <input type="date" placeholder="addplace" name="addplace" value="{{
+                  request.form.addplace }}">
+      <input type="text" placeholder="infoevent" name="infoevent" style = "max-width: 1000px" value ="{{
+        request.form.infoevent }}">
+      <input class = "btn btn-secondary" type="submit" name ="envoie" value="envoie">
+      <br>
+      <br>
+      <form action="" method="post">
+          <input type="text" placeholder="destructor" name="destructor" value="{{
+            request.form.destructor }}">
+        <input class = "btn btn-secondary" type="submit" name ="rmv" value="rmv">
+        <br>
+        <br><input class = "btn btn-primary" type = "submit" name = "upload" value = "si vous voulez uploader votre logo"></a>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for messages in messages %}
+            {{messages}}
+            <br>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+  </center>
+  <br><br><br><br><br><br><br><br><br>
+
+
+{% endblock %}
+

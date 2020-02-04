@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block body%}
+
+
+<header class="jumbotron my-4">
+        <h1 class="display-3" id="demande"><center>Plus d'infos sur cet évenement</center></h1>
+        <p class="lead">{{data.infoevent}}</p>
+        <form action="" method="post">
+        <center>
+        <input class = "btn btn-secondary" type="submit" name ="return" value="retour a la page des evenements">
+        </center>
+    </form>
+</header>
+{% endblock body %}

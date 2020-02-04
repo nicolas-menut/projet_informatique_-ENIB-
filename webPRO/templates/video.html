@@ -1,0 +1,21 @@
+{% extends "p_pr.html" %}
+{% block content %}
+<h1 class="display-3">Enjoy</h1>
+<p class="lead">Je vous rappelle que la vidéo que vous regardez c'est à dire : {{film}} est un film qui a été publié par un des utilisateurs du site ! Je vous invite 
+  donc grandement à partager certains films pour alimenter le site. </p>
+</header>
+<center>
+  <h1>
+    {{ film }}
+  </h1>
+  <video
+      src="{{ video }}"
+      width="800"
+      height="400"
+      controls
+      >
+  </video>
+</center>
+<!---<a class="nav-link js-scroll-trigger" href={{url_for('chercheur')}}>Home</a>
+  --->
+{% endblock %}
